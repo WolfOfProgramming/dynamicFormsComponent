@@ -1,0 +1,111 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.body {
+    background-color: #1e1e25;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.form {
+    background-color: #27293d;
+    width: 25%;
+    height: 750px;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+}
+
+.form__section {
+    position: relative;
+    height: 100px;
+}
+
+.form__label {
+    display: block;
+    color: #ffffff;
+}
+
+.form__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form__input {
+    height: 45px;
+    border: 2px solid #4444ff;
+    border-radius: 20px;
+    padding: 15px;
+    width: 300px;
+    background: transparent;
+    color: #ffffff;
+}
+
+.form__input:focus {
+    border: 2px solid #8844ff;
+}
+
+.form__error {
+    color: #ff1133;
+}
+
+.form__delete {
+    position: relative;
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background: transparent;
+}
+
+.form__delete::after,
+.form__delete::before {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 100%;
+    background: #ffffff;
+    height: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.form__delete::after {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.form__delete::before {
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.form__button {
+    width: 140px;
+    height: 40px;
+    border: 1px solid #606b91;
+    background-color: #305cf4;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1.3em;
+}
+
+.form__button--submit {
+    vertical-align: bot;
+    background-color: #d54fd7;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
