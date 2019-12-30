@@ -56,11 +56,12 @@
 }
 
 .form__input:focus {
-    border: 2px solid #8844ff;
+    border: 2px solid #d54fd7;
 }
 
 .form__error {
     color: #ff1133;
+    font-size: 0.8em;
 }
 
 .form__delete {
@@ -197,7 +198,7 @@
         font-size: 1.3em;
     }
     :root {
-        font-size: 18px;
+        font-size: 17px;
     }
 }
 
@@ -215,6 +216,6 @@
         width: 25%;
     }
     :root {
-        font-size: 21px;
+        font-size: 18px;
     }
 }
