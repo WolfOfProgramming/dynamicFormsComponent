@@ -7,39 +7,35 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.body {
+.container {
     background-color: #1e1e25;
-    min-width: 100vw;
+    min-width: 100%;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow-x: hidden;
-    overflow-y: auto;
 }
 
 .form {
     background-color: #27293d;
-    width: 25%;
-    height: 750px;
+    width: 100%;
+    max-width: 500px;
+    height: 800px;
     border-radius: 10px;
     padding: 20px;
-    position: relative;
 }
 
 .form__section {
-    position: relative;
     height: 115px;
 }
 
 .form__label {
     display: block;
     color: #ffffff;
-     padding: 5px 0;
+    padding: 5px 0;
 }
 
 .form__wrapper {
-    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,7 +46,7 @@
     border: 2px solid #4444ff;
     border-radius: 20px;
     padding: 15px;
-    width: 300px;
+    width: 350px;
     background: transparent;
     color: #ffffff;
     flex-shrink: 1;
@@ -67,154 +63,57 @@
 }
 
 .form__delete {
-    position: relative;
     border: none;
     width: 30px;
     height: 30px;
     cursor: pointer;
     background: transparent;
     flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 .form__delete::after,
 .form__delete::before {
-    position: absolute;
     content: '';
-    display: block;
-    width: 100%;
+    height: 100%;
     background: #ffffff;
-    height: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+    width: 10px;
 }
 
 .form__delete::after {
-    transform: translateY(-50%) rotate(45deg);
+    transform: translateX(-10px) rotate(45deg);
 }
 
 .form__delete::before {
-    transform: translateY(-50%) rotate(-45deg);
+    transform: translateX(10px) rotate(-45deg);
+}
+
+.form__buttons {
+    display: flex;
+    justify-content: space-between;
 }
 
 .form__button {
     width: 140px;
-    height: 40px;
+    height: 45px;
     border: 1px solid #606b91;
     background-color: #305cf4;
     color: #ffffff;
     cursor: pointer;
-    border-radius: 8px;
+    border-radius: 20px;
     font-size: 1.3em;
 }
 
 .form__button--submit {
     background-color: #d54fd7;
+}
+
+.form__button--add::first-letter,
+.form__button--submit::first-letter {
     text-transform: uppercase;
 }
 
-@media (min-width: 300px) {
-    .form {
-        width: 100%;
-        height: 100vh;
-    }
-    .form__input {
-        height: 35px;
-        border: 2px solid #4444ff;
-        border-radius: 15px;
-        width: 250px;
-    }
-
-    .form__button--submit {
-        position: relative;
-    }
-}
-
-@media (min-width: 500px) {
-    .form {
-        width: 100%;
-        height: 100vh;
-    }
-    .form__input {
-        height: 40px;
-        border: 2px solid #4444ff;
-        border-radius: 15px;
-        width: 350px;
-    }
-
-    .form__delete {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-@media (min-width: 600px) {
-    .form {
-        width: 80%;
-        height: 700px;
-    }
-}
-
-@media (min-width: 700px) {
-    .form {
-        width: 70%;
-    }
-}
-
-@media (min-width: 800px) {
-    .form {
-        width: 60%;
-        height: 800px;
-    }
-
-    .form__button--submit {
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
-    }
-}
-
-@media (min-width: 950px) {
-    .form {
-        width: 50%;
-    }
-}
-
-@media (min-width: 1100px) {
-    .form {
-        width: 40%;
-    }
-    .form__input {
-        font-size: 1.15em;
-    }
-}
-
-@media (min-width: 1300px) {
-    .form {
-        width: 35%;
-    }
-    .form__button {
-        width: 170px;
-        height: 40px;
-        cursor: pointer;
-        border-radius: 8px;
-        font-size: 1.3em;
-    }
-    :root {
-        font-size: 17px;
-    }
-}
-
-@media (min-width: 1500px) {
-    .form {
-        width: 30%;
-    }
-    :root {
-        font-size: 20px;
-    }
-}
-
-@media (min-width: 1700px) {
-    .form {
-        width: 25%;
-    }
+.form__button--disabled {
+    background-color: #444444;
 }
