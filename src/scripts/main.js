@@ -1,6 +1,6 @@
 import { renderInput } from './renderInput';
 import { renderButton } from './renderButton';
-import { isInputsCorrect } from './validation';
+import { isInputsCorrect, createErrorParagraphs } from './validation';
 
 const formButtons = document.querySelector('.form__buttons');
 const formContainer = document.querySelector('.form__container');
@@ -16,8 +16,8 @@ let activeInputs = 0;
 const deleteErrorParagraphs = () => {
     const formSections = document.querySelectorAll('.form__section');
     formSections.forEach(formSection => {
-        if (formSection.querySelector('.form__error')) {
-            const formError = formSection.querySelector('.form__error');
+        const formError = formSection.querySelector('.form__error');
+        if (formError) {
             formSection.removeChild(formError);
         }
     });
@@ -66,8 +66,12 @@ generateInput(activeInputs);
 addButton.addEventListener('click', () => {
     const inputs = document.querySelectorAll('.form__input');
     deleteErrorParagraphs();
-    if (activeInputs < MAX_INPUT_COUNT && isInputsCorrect(inputs)) {
-        generateInput(activeInputs);
+    if (activeInputs < MAX_INPUT_COUNT) {
+        if (isInputsCorrect(inputs)) {
+            generateInput(activeInputs);
+        } else {
+            createErrorParagraphs(inputs);
+        }
     }
     if (activeInputs === MAX_INPUT_COUNT) {
         addButton.classList.add('form__button--disabled');
@@ -86,5 +90,7 @@ submitButton.addEventListener('click', e => {
 
         window.location.href =
             url.origin + '?passwords=' + inputsValues.join(';');
+    } else {
+        createErrorParagraphs(inputs);
     }
 });
