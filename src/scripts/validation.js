@@ -1,9 +1,5 @@
 export const isInputsCorrect = inputs => {
-    const emptyInputs = getEmptyInputs(inputs);
-    if (emptyInputs.length === 0) {
-        return true;
-    }
-    return false;
+    return !getEmptyInputs(inputs).length;
 };
 
 export const createErrorParagraphs = inputs => {
