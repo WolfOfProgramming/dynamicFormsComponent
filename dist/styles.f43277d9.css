@@ -1,0 +1,122 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    background-color: #1e1e25;
+    min-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    background-color: #27293d;
+    width: 100%;
+    max-width: 500px;
+    height: 800px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.form__section {
+    height: 115px;
+}
+
+.form__label {
+    display: block;
+    color: #ffffff;
+    padding: 5px 0;
+}
+
+.form__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form__input {
+    height: 45px;
+    border: 2px solid #4444ff;
+    border-radius: 20px;
+    padding: 15px;
+    width: 350px;
+    background: transparent;
+    color: #ffffff;
+    flex-shrink: 1;
+}
+
+.form__input:focus {
+    border: 2px solid #d54fd7;
+}
+
+.form__error {
+    color: #ff1133;
+    font-size: 0.8em;
+    padding: 5px 0;
+}
+
+.form__delete {
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background: transparent;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__delete::after,
+.form__delete::before {
+    content: '';
+    height: 100%;
+    background: #ffffff;
+    width: 10px;
+}
+
+.form__delete::after {
+    transform: translateX(-10px) rotate(45deg);
+}
+
+.form__delete::before {
+    transform: translateX(10px) rotate(-45deg);
+}
+
+.form__buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__button {
+    width: 140px;
+    height: 45px;
+    border: 1px solid #606b91;
+    background-color: #305cf4;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 1.3em;
+}
+
+.form__button--submit {
+    background-color: #d54fd7;
+}
+
+.form__button--add::first-letter,
+.form__button--submit::first-letter {
+    text-transform: uppercase;
+}
+
+.form__button--disabled {
+    background-color: #444444;
+}
+
+
+/*# sourceMappingURL=/styles.f43277d9.css.map */
